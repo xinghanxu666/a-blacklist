@@ -14,7 +14,7 @@ export class OauthService {
     await isSafeData(body);
     try {
       const { data: 令牌 } = await axios.post(
-        'https://account.lazy.ink/v1/oauth2/token',
+        'https://oauth.087654.xyz/v1/oauth2/token',
         {
           client_id: config.oauth2_config.client_id,
           client_secret: config.oauth2_config.client_secret,
@@ -48,7 +48,7 @@ export class OauthService {
     await isSafeData(body);
     try {
       const { data: resData } = await axios.get(
-        'https://account.lazy.ink/v1/oauth2/user',
+        'https://oauth.087654.xyz/v1/oauth2/user',
         {
           headers: {
             // 'Content-Type': 'application/x-www-form-urlencoded',
@@ -99,7 +99,7 @@ export class OauthService {
   }
 
   returnNyancyUrl() {
-    const url = `https://account.lazy.ink/oauth2/authorize?client_id=${
+    const url = `https://oauth.087654.xyz/oauth2/authorize?client_id=${
       config.oauth2_config.client_id
     }&response_type=code&state=${String(
       Math.random(),
